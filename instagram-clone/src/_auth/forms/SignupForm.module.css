@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  /* Smaller than sm breakpoint */
+  .container {
+    width: 420px;
+  }
+}

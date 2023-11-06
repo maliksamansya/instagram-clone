@@ -1,0 +1,20 @@
+.imageSidebar {
+  width: 50%; /* Lebar gambar sebesar 50% dari lebar parent */
+  height: 100vh; /* Tinggi gambar sama dengan tinggi viewport */
+  object-fit: cover; /* Penyesuaian gambar agar mengisi dengan baik area yang diberikan */
+  background: no-repeat; /* Gambar latar tidak diulang */
+}
+
+/* Tampilkan gambar hanya pada ukuran layar besar (xl) */
+@media (min-width: 1280px) {
+  .imageSidebar {
+    display: block;
+  }
+}
+
+/* Sembunyikan gambar pada ukuran layar kecil hingga besar (xl) */
+@media (max-width: 1279px) {
+  .imageSidebar {
+    display: none;
+  }
+}
