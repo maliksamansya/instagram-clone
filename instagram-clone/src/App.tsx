@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Container } from "@mantine/core";
+import { Box } from "@mantine/core";
 import { Routes, Route } from "react-router-dom";
 import SigninForm from "./_auth/forms/SigninForm";
 import { Home } from "./_root/pages";
@@ -8,19 +7,20 @@ import AuthLayout from "./_auth/AuthLayout";
 import RootLayout from "./_root/RootLayout";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Container
-        px={0}
-        styles={() => ({
-          root: {
-            display: "flex",
-            height: "100vh",
-            margin: 0,
-          },
-        })}
+      <Box
+        miw={375}
+        // px={0}
+        // styles={() => ({
+        //   root: {
+        //     display: "flex",
+        //     height: "100vh",
+        //     width: "100%",
+        //     margin: 0,
+        //     minWidth: "375px",
+        //   },
+        // })}
       >
         <Routes>
           {/* public routes */}
@@ -34,7 +34,7 @@ function App() {
             <Route index element={<Home />} />
           </Route>
         </Routes>
-      </Container>
+      </Box>
     </>
   );
 }

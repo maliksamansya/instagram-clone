@@ -11,21 +11,32 @@ const AuthLayout = () => {
       ) : (
         <>
           <Box
-            pt={10}
             style={{
               display: "flex",
-              flex: 1,
-              justifyContent: "center",
               alignItems: "center",
+              justifyContent: "flex-end",
+              height: "100vh",
+              overflowY: "hidden",
             }}
           >
-            <Outlet />
+            <Box
+              py={10}
+              style={{
+                display: "flex",
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "center",
+                width: "50%",
+              }}
+            >
+              <Outlet />
+            </Box>
+            <Image
+              src={imageSidebar}
+              alt="Logo"
+              className={classes.imageSidebar}
+            />
           </Box>
-          <Image
-            src={imageSidebar}
-            alt="Logo"
-            className={classes.imageSidebar}
-          />
         </>
       )}
     </>

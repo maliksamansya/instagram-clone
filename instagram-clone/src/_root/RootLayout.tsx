@@ -1,7 +1,10 @@
-import React from "react";
-
+import { Button } from "@mantine/core";
 const RootLayout = () => {
-  return <div>RootLayout</div>;
+  return (
+    <>
+      <Button color="lime">Button</Button>
+    </>
+  );
 };
 
 export default RootLayout;
