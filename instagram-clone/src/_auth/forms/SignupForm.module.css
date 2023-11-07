@@ -1,13 +1,102 @@
+/* container */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (min-width: 640px) {
+    width: 420px;
+  }
 }
 
-@media (min-width: 640px) {
-  /* Smaller than sm breakpoint */
-  .container {
-    width: 420px;
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Set gap to 5 in rem units */
+  width: 100%;
+  margin-top: 1rem; /* Set margin-top to 4 in rem units */
+}
+
+/* text */
+.accountText {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 140%;
+  letter-spacing: tighter;
+  padding-top: 1.25rem;
+  @media (min-width: 640px) {
+    padding-top: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 30px;
+    padding-top: 1.25rem;
+  }
+}
+
+.detailText {
+  font-size: 14px;
+  font-weight: 500; /* set font-weight to "medium" */
+  line-height: 140%;
+  color: #7878a3;
+  @media (min-width: 768px) {
+    font-size: 16px;
+    font-weight: 400; /* set font-weight to "normal" */
+  }
+
+  &:hover {
+    color: red;
+  }
+}
+
+.logInText {
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  color: #efefef;
+  margin-top: 2rem;
+}
+
+/* CSS */
+.linkText {
+  font-size: 14px; /* Ganti dengan ukuran font yang sesuai */
+  font-weight: 600; /* Ganti dengan bobot font yang sesuai */
+  line-height: 140%; /* Ganti dengan line-height yang sesuai */
+  letter-spacing: -0.05em; /* Ganti dengan tracking yang sesuai */
+  margin-left: 0.25rem;
+  color: #877eff;
+}
+
+/* input form */
+.input {
+  height: 3rem; /* Set the height to 12 in Tailwind units (12 * 0.25rem = 3rem) */
+  background-color: #333; /* Set the background color to the dark-4 color */
+  border: none; /* Remove the border */
+  color: #aaa; /* Set the text color to the light-4 color */
+  border-radius: 0.25rem; /* Set the border-radius to the default in Tailwind (0.25rem) */
+  width: 100%;
+  &::placeholder {
+    color: #999;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #ddd;
+    outline-offset: 0.125rem;
+  }
+}
+
+/* Button */
+.buttonSubmit {
+  background-color: #877eff; /* Gantilah dengan warna latar belakang yang sesuai */
+  color: #ffffff; /* Gantilah dengan warna teks yang sesuai */
+  height: 3rem;
+  border-radius: 0.25rem;
+  /* display: flex;
+  gap: 0.5rem; */
+
+  &:hover {
+    background-color: #877eff;
+    color: #ffffff;
+    /* color: red; */
   }
 }
