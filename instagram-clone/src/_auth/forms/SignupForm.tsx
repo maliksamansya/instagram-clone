@@ -3,12 +3,14 @@ import { useForm } from "@mantine/form";
 import imageLogo from "./../../assets/images/image-logo.svg";
 import classes from "./SignupForm.module.css";
 import { Link } from "react-router-dom";
+import { createUserAccount } from "../../lib/appwrite/api";
+
 const SignupForm = () => {
   const form = useForm({
-    initialValues: {
-      email: "",
-      termsOfService: false,
-    },
+    // initialValues: {
+    //   email: "",
+    //   // termsOfService: false,
+    // },
 
     validate: {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
@@ -16,6 +18,11 @@ const SignupForm = () => {
   });
 
   const isUserLoading = false;
+  const submitForm = async (values) => {
+    const newUser = await createUserAccount(values);
+    console.log(newUser);
+    // console.log(values);
+  };
 
   return (
     <>
@@ -27,7 +34,7 @@ const SignupForm = () => {
         </Text>
 
         <form
-          onSubmit={form.onSubmit((values) => console.log(values))}
+          onSubmit={form.onSubmit((values) => submitForm(values))}
           className={classes.formContainer}
         >
           <TextInput
