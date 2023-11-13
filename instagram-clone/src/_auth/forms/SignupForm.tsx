@@ -2,26 +2,69 @@ import { TextInput, Box, Image, Text, Button, Loader } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import imageLogo from "./../../assets/images/image-logo.svg";
 import classes from "./SignupForm.module.css";
-import { Link } from "react-router-dom";
-import { createUserAccount } from "../../lib/appwrite/api";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  useCreateUserAccount,
+  useSignInAccount,
+} from "../../lib/react-query/queriesAndMutations";
+import { useUserContext } from "../../context/AuthContext";
+import { INewUser } from "./../../types";
 
 const SignupForm = () => {
+  const navigate = useNavigate();
+  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
   const form = useForm({
-    // initialValues: {
-    //   email: "",
-    //   // termsOfService: false,
-    // },
+    initialValues: {
+      name: "",
+      email: "",
+      username: "",
+      password: "",
+      // termsOfService: false,
+    },
 
     validate: {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
     },
   });
 
-  const isUserLoading = false;
-  const submitForm = async (values) => {
-    const newUser = await createUserAccount(values);
-    console.log(newUser);
-    // console.log(values);
+  // Queries
+  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
+    useCreateUserAccount();
+
+  const { mutateAsync: signInAccount, isPending: isSigningInUser } =
+    useSignInAccount();
+
+  const submitForm = async (user: INewUser) => {
+    const newUser = await createUserAccount(user);
+
+    if (!newUser) {
+      console.log("error");
+      // toast({ title: "Sign up failed. Please try again.", });
+      return;
+    }
+    const session = await signInAccount({
+      email: user.email,
+      password: user.password,
+    });
+
+    if (!session) {
+      // toast({ title: "Something went wrong. Please login your new account", });
+      console.log("somethine went wrong");
+      navigate("/sign-in");
+
+      return;
+    }
+
+    const isLoggedIn = await checkAuthUser();
+    if (isLoggedIn) {
+      form.reset();
+
+      navigate("/");
+    } else {
+      // toast({ title: "Login failed. Please try again.", });
+
+      return;
+    }
   };
 
   return (
@@ -78,14 +121,16 @@ const SignupForm = () => {
             type="submit"
             className={classes.buttonSubmit}
             leftSection={
-              isUserLoading ? (
+              isCreatingAccount || isUserLoading || isSigningInUser ? (
                 <Loader size={14} color="rgba(255, 255, 255, 0.95)" />
               ) : (
                 ""
               )
             }
           >
-            {isUserLoading ? "Loading..." : "Sign up"}
+            {isCreatingAccount || isUserLoading || isSigningInUser
+              ? "Loading..."
+              : "Sign up"}
           </Button>
 
           <Text className={classes.logInText}>

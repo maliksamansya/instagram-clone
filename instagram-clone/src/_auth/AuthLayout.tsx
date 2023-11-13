@@ -15,8 +15,9 @@ const AuthLayout = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "flex-end",
-              height: "100vh",
-              overflowY: "hidden",
+              // height: "100vh",
+              // overflowY: "hidden",
+              // overflowY: "auto",
             }}
           >
             <Box

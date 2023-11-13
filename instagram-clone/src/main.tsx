@@ -6,6 +6,8 @@ import { MantineProvider, createTheme } from "@mantine/core";
 // import "@mantine/core/styles.css";
 import "./index.css";
 import "@mantine/core/styles.layer.css";
+import AuthProvider from "./context/AuthContext.tsx";
+import QueryProvider from "./lib/react-query/queryProvider.tsx";
 
 const theme = createTheme({
   /** Your theme override here */
@@ -15,7 +17,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <MantineProvider theme={theme}>
       <BrowserRouter>
-        <App />
+        <QueryProvider>
+          <AuthProvider>
+            <App />
+          </AuthProvider>
+        </QueryProvider>
       </BrowserRouter>
     </MantineProvider>
   </React.StrictMode>
