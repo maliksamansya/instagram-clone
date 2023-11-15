@@ -1,9 +1,16 @@
+.container {
+  width: 100%;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+/* Todo Topbar */
 .topbar {
   position: sticky;
   top: 0;
   z-index: 50;
   background-color: #09090a; /* Ganti dengan warna latar belakang yang sesuai */
-  /* width: 100%; */
+  width: 100%;
   @media (min-width: 768px) {
     display: none;
   }
@@ -21,4 +28,90 @@
   height: 2rem; /* Sesuaikan nilai sesuai kebutuhan Anda, karena 1rem = 8px */
   width: 2rem; /* Sesuaikan nilai sesuai kebutuhan Anda */
   border-radius: 50%; /* Membuat elemen menjadi lingkaran dengan sudut melingkar 50% */
+}
+
+/* TODO Left Sidebar */
+.leftSidebar {
+  display: none;
+  flex-wrap: wrap;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 270px;
+  background-color: #09090a;
+  height: 100vh;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  .bodyBold {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 140%;
+  }
+
+  .smallRegular {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 140%;
+    color: #7878a3;
+  }
+
+  .leftSidebarLink {
+    font-size: 16px;
+    font-weight: medium;
+    line-height: 140%;
+    border-radius: 0.375rem; /* 0.375rem sesuai dengan nilai dari rounded-lg di Tailwind */
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: #877eff; /* Nilai sesuai dengan hover:bg-primary-500 di Tailwind */
+      .sidebarIcon {
+        filter: invert(100%) brightness(0);
+        transition: filter 0.3s ease;
+      }
+    }
+
+    .sidebarIconActive {
+      filter: invert(100%) brightness(0);
+    }
+
+    .navLinkContainer {
+      display: flex;
+      gap: 1rem; /* Jika 1 unit Tailwind = 0.25rem */
+      align-items: center;
+      padding: 1rem; /* Nilai padding disesuaikan dengan preferensi desain */
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .leftSidebarLinkBg {
+    background-color: #877eff;
+  }
+
+  .shadButtonGhost {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem; /* Jika 1 unit Tailwind = 0.25rem */
+    align-items: center;
+    justify-content: start;
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+    &:hover {
+      background-color: transparent;
+      color: white;
+    }
+  }
+
+  .logoutText {
+    font-size: 14px;
+    font-weight: medium;
+    line-height: 140%;
+    @media (min-width: 1024px) {
+      font-size: 16px;
+    }
+  }
 }

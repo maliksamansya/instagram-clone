@@ -3,7 +3,7 @@
   /* height: 100vh;  */
   object-fit: cover;
   background: no-repeat;
-
+  flex: 1 1;
   @media (min-width: 1280px) {
     display: block;
   }
@@ -12,15 +12,3 @@
     display: none;
   }
 }
-/* 
-@media (min-width: 1280px) {
-  .imageSidebar {
-    display: block;
-  }
-}
-
-@media (max-width: 1279px) {
-  .imageSidebar {
-    display: none;
-  }
-} */
