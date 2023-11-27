@@ -1,8 +1,29 @@
 .container {
   width: 100%;
+  /* position: relative; */
+  height: 100vh;
   @media (min-width: 768px) {
     display: flex;
   }
+}
+
+.customScrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.customScrollbar::-webkit-scrollbar-track {
+  background: #09090a;
+}
+
+.customScrollbar::-webkit-scrollbar-thumb {
+  background: #5c5c7b;
+  border-radius: 50px;
+}
+
+.customScrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7878a3;
 }
 /* Todo Topbar */
 .topbar {
@@ -113,5 +134,163 @@
     @media (min-width: 1024px) {
       font-size: 16px;
     }
+  }
+}
+
+/* Todo OUTLET */
+.outletContainer {
+  display: flex;
+  flex: 1;
+  height: 100%;
+
+  .createPostContainer {
+    display: flex;
+    flex: 1;
+
+    .commonContainer {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: center;
+      gap: 10px;
+      overflow-y: scroll;
+      padding-top: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+
+      @media (min-width: 768px) {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      @media (min-width: 1024px) {
+        padding: 14px;
+      }
+
+      .container3 {
+        max-width: 5xl; /* Gunakan nilai sebenarnya atau gantilah dengan nilai yang sesuai */
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 3px; /* Gunakan nilai sebenarnya atau gantilah dengan nilai yang sesuai */
+        width: 100%;
+        .textCreatePost {
+          font-size: 24px;
+          font-weight: bold;
+          line-height: 140%;
+          letter-spacing: -0.02em;
+          text-align: left;
+          width: 100%;
+          @media (min-width: 768px) {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .postFormContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 9px; /* Sesuaikan dengan nilai yang sesuai */
+    width: 100%;
+    max-width: 1200px; /* Sesuaikan dengan nilai yang sesuai */
+
+    .root {
+      /* height: 9rem;  */
+      color: white;
+      padding: 6px;
+      background-color: #101012; /* Sesuaikan dengan warna latar belakang yang sesuai */
+      border-radius: 2px; /* Sesuaikan dengan radius sudut yang sesuai */
+      border: none;
+      outline: none;
+      ring-offset-color: #7878a3; /* Sesuaikan dengan warna ring offset yang sesuai */
+
+      &:focus-visible {
+        /* ring: 1px; 
+        ring-offset: 1px;  */
+        outline: 2px solid #ddd;
+        outline-offset: 0.125rem;
+      }
+    }
+
+    .submitContainer {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-end;
+
+      .cancelButton {
+        height: 3rem; /* h-12 in Tailwind */
+        background-color: #1f1f22; /* bg-dark-4 in Tailwind */
+        padding-left: 1.25rem; /* px-5 in Tailwind */
+        padding-right: 1.25rem; /* px-5 in Tailwind */
+        color: #ffffff; /* text-light-1 in Tailwind */
+        display: flex; /* flex in Tailwind */
+        gap: 0.5rem; /* gap-2 in Tailwind */
+      }
+
+      .submitButton {
+        height: 3rem; /* h-12 in Tailwind */
+        padding-left: 1.25rem; /* px-5 in Tailwind */
+        padding-right: 1.25rem; /* px-5 in Tailwind */
+        background-color: #877eff; /* replace with your actual primary color */
+        color: #ffffff; /* text-light-1 in Tailwind, replace with your actual light color */
+        display: flex; /* flex in Tailwind */
+        gap: 0.5rem; /* gap-2 in Tailwind */
+        transition: background-color 0.3s ease;
+        white-space: nowrap;
+        &:hover {
+          background-color: #877eff;
+        }
+      }
+    }
+  }
+}
+
+/* Todo bottom bar */
+/* Bottom bar */
+.bottomBar {
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  align: center;
+  bottom: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: #09090a; /* Sesuaikan dengan nilai bg-dark-2 di Tailwind */
+  padding: 1rem 1.25rem; /* Sesuaikan dengan nilai px-5 dan py-4 di Tailwind */
+  /* height: 100vh; */
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  .linkContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    .sidebarIconActive {
+      filter: invert(100%) brightness(0);
+    }
+  }
+
+  .linkActive {
+    border-radius: 10px; /* Nilai sesuai dengan rounded-[10px] di Tailwind */
+    background-color: #877eff;
+  }
+
+  .textLabel {
+    font-size: 10px;
+    font-weight: medium;
+    line-height: 140%;
+    color: #efefef; /* Ganti dengan warna teks yang sesuai */
   }
 }
