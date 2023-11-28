@@ -187,6 +187,57 @@
         }
       }
     }
+
+    .dropContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #101012; /* Ganti dengan warna latar belakang yang sesuai */
+      border-radius: 0.75rem; /* Sesuaikan sesuai kebutuhan Anda */
+      cursor: pointer;
+
+      .boxUploader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1.75rem; /* Nilai p-7 diubah menjadi 1.75rem */
+        /* height: 80px;  */
+
+        /* Khusus untuk ukuran layar besar (lg) */
+        @media (min-width: 1024px) {
+          height: 612px; /* Nilai lg:h-[612px] diubah menjadi 612px */
+        }
+      }
+
+      .dragText {
+        color: #efefef; /* Ganti dengan nilai warna teks yang sesuai */
+        margin-bottom: 0.5rem; /* Sesuaikan margin-bottom sesuai dengan kebutuhan Anda */
+        margin-top: 1.5rem; /* Sesuaikan margin-top sesuai dengan kebutuhan Anda */
+        font-size: 16px;
+        font-weight: medium;
+        line-height: 140%;
+      }
+      .fileText {
+        color: #5c5c7b;
+        font-weight: normal; /* Sesuaikan bobot font sesuai dengan kebutuhan Anda */
+        margin-bottom: 1.5rem; /* Sesuaikan margin-bottom sesuai dengan kebutuhan Anda */
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 140%;
+      }
+      .selectButton {
+        background-color: #1f1f22;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        /* padding: 1.25rem; */
+        color: #ffffff;
+        /* display: flex; */
+        /* gap: 0.5rem;  */
+        /* height: 100%; */
+      }
+    }
   }
 
   .postFormContainer {

@@ -11,6 +11,7 @@ import {
 import { useCallback, useEffect, useState } from "react";
 import { useUserContext, INITIAL_USER } from "./../context/AuthContext";
 import iconAddPost from "./../assets/icons/add-post.svg";
+import iconFileUpload from "./../assets/icons/file-upload.svg";
 
 import {
   Link,
@@ -35,6 +36,7 @@ const RootLayout = () => {
     // Do something with the files
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  const [fileUrl, setFileUrl] = useState<string>("");
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -190,14 +192,35 @@ const RootLayout = () => {
                     }}
                   />
                   {/* Add Photos */}
-                  <div {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    {isDragActive ? (
-                      <p>Drop the files here ...</p>
+                  <div {...getRootProps()} className={classes.dropContainer}>
+                    <input {...getInputProps()} style={{ cursor: "pointer" }} />
+                    {fileUrl ? (
+                      <>
+                        <Box>test 1</Box>
+                      </>
                     ) : (
-                      <p>
-                        Drag 'n' drop some files here, or click to select files
-                      </p>
+                      <>
+                        <Box className={classes.boxUploader}>
+                          <Image
+                            src={iconFileUpload}
+                            w={96}
+                            h={77}
+                            alt="file upload"
+                          />
+                          <Text className={classes.dragText}>
+                            Drag photo here
+                          </Text>
+                          <Text className={classes.fileText}>
+                            SVG, PNG, JPG
+                          </Text>
+                          <Button
+                            type="button"
+                            className={classes.selectButton}
+                          >
+                            Select from computer
+                          </Button>
+                        </Box>
+                      </>
                     )}
                   </div>
 
