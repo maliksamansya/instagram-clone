@@ -2,7 +2,7 @@ export type INavLink = {
   imgURL: string;
   route: string;
   label: string;
-  subPage: string | null;
+  // subPage: string | null;
 };
 
 export type IUpdateUser = {
