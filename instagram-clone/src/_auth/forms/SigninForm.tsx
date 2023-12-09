@@ -3,7 +3,7 @@ import { useForm } from "@mantine/form";
 import imageLogo from "./../../assets/images/image-logo.svg";
 import classes from "./SignupForm.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useSignInAccount } from "../../lib/react-query/queriesAndMutations";
+import { useSignInAccount } from "../../lib/react-query/queries";
 import { useUserContext } from "../../context/AuthContext";
 
 type User = {

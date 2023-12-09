@@ -6,6 +6,7 @@ import { MantineProvider, createTheme } from "@mantine/core";
 // import "@mantine/core/styles.css";
 import "./index.css";
 import "@mantine/core/styles.layer.css";
+import "@mantine/dropzone/styles.css";
 import AuthProvider from "./context/AuthContext.tsx";
 import QueryProvider from "./lib/react-query/queryProvider.tsx";
 

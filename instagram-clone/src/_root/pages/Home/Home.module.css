@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex: 1;
+}
+
+.homePosts {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  @media (min-width: 768px) {
+    gap: 9px;
+  }
+}
+
+.textHome {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 140%;
+  letter-spacing: tighter;
+  text-align: left;
+  width: 100%;
+  @media (min-width: 768px) {
+    font-size: 30px;
+  }
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 9px;
+  width: 100%;
+}
+
+.listText {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* TODO post card */
+.postCard {
+  background-color: #09090a;
+  border-radius: 1.5rem;
+  border: 1px solid #1f1f22;
+  padding: 1.25rem;
+  width: 100%;
+  max-width: 24rem;
+
+  @media (min-width: 1024px) {
+    padding: 1.75rem;
+  }
+  .imagePost {
+    width: 3rem; /* Corresponds to w-12 in Tailwind */
+    border-radius: 1.5rem;
+    @media (min-width: 1024px) {
+      height: 3rem;
+    }
+  }
+}
+
+.listCreator {
+  display: grid;
+  gap: 1.5rem;
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.captionText {
+  color: white;
+  text-decoration: none !important;
+}

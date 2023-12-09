@@ -345,3 +345,52 @@
     color: #efefef; /* Ganti dengan warna teks yang sesuai */
   }
 }
+
+/* TODO dropzone */
+.dropZone {
+  background-color: #101012 !important; /* Ganti dengan warna latar belakang yang sesuai */
+}
+
+.imgPreviewContainer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  width: 100%;
+  padding: 1.25rem;
+  @media (min-width: 1024px) {
+    padding: 2.5rem;
+  }
+}
+
+.imgPreview {
+  /* height: 80px; */
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  object-position: top;
+
+  @media (min-width: 1024px) {
+    height: 480px;
+  }
+}
+
+.dragText {
+  color: #5c5c7b;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  border-top: 1px solid #1f1f22;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 140%;
+}
+
+.dropContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #101012; /* Ganti dengan warna latar belakang yang sesuai */
+  border-radius: 0.75rem; /* Sesuaikan sesuai kebutuhan Anda */
+  cursor: pointer;
+}
