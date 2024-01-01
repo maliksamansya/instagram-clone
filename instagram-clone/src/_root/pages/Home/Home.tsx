@@ -9,7 +9,7 @@ import globalClasses from "./../../../style/Style.module.css";
 import { useUserContext } from "../../../context/AuthContext";
 import { Link } from "react-router-dom";
 import { multiFormatDateString } from "../../../lib/utils";
-import PostStats from "./PostStats";
+import PostStats from "./../../../components/PostStats";
 import { useMediaQuery } from "@mantine/hooks";
 import UserCard from "./UserCard";
 import iconEdit from "./../../../assets/icons/edit.svg";

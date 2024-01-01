@@ -1,0 +1,24 @@
+.btnContainer {
+  display: none;
+  width: 100%;
+  max-width: 64rem; /* Corresponds to max-w-5xl in Tailwind */
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.iconPlaceholder {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  @media (min-width: 1024px) {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.lineBreak {
+  border-color: rgba(31, 31, 34, 0.8);
+  width: 100%;
+  border-style: solid;
+}

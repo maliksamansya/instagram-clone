@@ -1,0 +1,11 @@
+.listContainer {
+  position: relative;
+  min-width: 20rem;
+  height: 20rem;
+}
+
+.postImage {
+  height: 100%; /* Sesuaikan dengan nilai h-full pada Tailwind */
+  width: 100%;
+  object-fit: cover;
+}

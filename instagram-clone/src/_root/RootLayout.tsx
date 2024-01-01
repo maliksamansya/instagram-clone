@@ -1,5 +1,4 @@
 import { Box, Flex, Image, Loader, Text } from "@mantine/core";
-
 import { useUserContext } from "./../context/AuthContext";
 import { Link, useLocation, NavLink, Outlet } from "react-router-dom";
 import { useSignOutAccount } from "../lib/react-query/queries";

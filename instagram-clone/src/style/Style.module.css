@@ -87,6 +87,12 @@
   align-items: center;
 }
 
+.baseRegular {
+  font-size: 16px; /* Sesuaikan dengan nilai text-[16px] pada Tailwind */
+  font-weight: 400; /* Sesuaikan dengan nilai font-normal pada Tailwind */
+  line-height: 1.4; /* Sesuaikan dengan nilai leading-[140%] pada Tailwind */
+}
+
 .baseMedium {
   font-size: 16px;
   font-weight: 500; /* Corresponds to font-medium in Tailwind */
@@ -162,4 +168,135 @@
   &:hover {
     background-color: #877eff !important; /* Hover state */
   }
+}
+
+.shadButtonGhost {
+  display: flex;
+  gap: 1rem; /* Sesuaikan dengan nilai gap-4 pada Tailwind */
+  align-items: center;
+  justify-content: flex-start;
+  &:hover {
+    background-color: transparent; /* Sesuaikan dengan nilai hover:bg-transparent pada Tailwind */
+    color: white;
+  }
+}
+
+.postDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2.5rem; /* Adjusted for gap-10 in Tailwind */
+  overflow-y: scroll;
+  padding: 2.5rem 1.25rem; /* Adjusted for py-10 px-5 in Tailwind */
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 3.5rem; /* Adjusted for md:p-14 in Tailwind */
+  }
+}
+
+.postDetailsCard {
+  background-color: #09090a;
+  width: 100%;
+  max-width: 64rem; /* Sesuaikan dengan nilai max-w-5xl pada Tailwind */
+  border: 1px solid #1f1f22; /* Sesuaikan dengan nilai border-dark-4 pada Tailwind */
+  border-radius: 30px; /* Sesuaikan dengan nilai rounded-[30px] pada Tailwind */
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1200px) {
+    border-radius: 30px 0 0 30px; /* Sesuaikan dengan nilai xl:rounded-l-[24px] pada Tailwind */
+    flex-direction: row;
+  }
+}
+
+.postDetailsImg {
+  height: 20rem; /* Sesuaikan dengan nilai h-80 pada Tailwind */
+  object-fit: cover;
+  padding: 1.25rem; /* Sesuaikan dengan nilai p-5 pada Tailwind */
+  background-color: #000000;
+
+  @media (min-width: 768px) {
+    height: 30rem; /* Sesuaikan dengan nilai lg:h-[480px] pada Tailwind */
+  }
+
+  @media (min-width: 1024px) {
+    width: 48%; /* Sesuaikan dengan nilai xl:w-[48%] pada Tailwind */
+    border-radius: 30px 0 0 0; /* Sesuaikan dengan nilai rounded-t-[30px] pada Tailwind */
+  }
+
+  @media (min-width: 1200px) {
+    border-radius: 30px 0 0 24px; /* Sesuaikan dengan nilai xl:rounded-l-[24px] pada Tailwind */
+  }
+}
+
+.postDetailsInfo {
+  background-color: #09090a;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Adjusted for gap-5 in Tailwind */
+  padding: 2rem; /* Adjusted for p-8 in Tailwind */
+  border-radius: 30px; /* Adjusted for rounded-[30px] in Tailwind */
+
+  @media (min-width: 768px) {
+    gap: 1.75rem; /* Adjusted for lg:gap-7 in Tailwind */
+  }
+}
+
+.gridContainer {
+  width: 100%; /* Sesuaikan dengan nilai w-full pada Tailwind */
+  display: grid;
+  grid-template-columns: 1fr; /* Sesuaikan dengan nilai grid-cols-1 pada Tailwind */
+  gap: 1.75rem; /* Sesuaikan dengan nilai gap-7 pada Tailwind */
+  max-width: 64rem; /* Sesuaikan dengan nilai max-w-5xl pada Tailwind */
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Sesuaikan dengan nilai sm:grid-cols-2 pada Tailwind */
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* Sesuaikan dengan nilai md:grid-cols-1 pada Tailwind */
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Sesuaikan dengan nilai lg:grid-cols-2 pada Tailwind */
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Sesuaikan dengan nilai xl:grid-cols-3 pada Tailwind */
+  }
+}
+
+.gridPostlink {
+  display: flex;
+  border-radius: 24px; /* Sesuaikan dengan nilai rounded-[24px] pada Tailwind */
+  border: 1px solid #1f1f22; /* Sesuaikan dengan nilai border-dark-4 pada Tailwind */
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%; /* Sesuaikan dengan nilai w-full pada Tailwind */
+  height: 100%; /* Sesuaikan dengan nilai h-full pada Tailwind */
+}
+
+.gridPostUser {
+  position: absolute;
+  bottom: 0;
+  padding: 1.25rem; /* Sesuaikan dengan nilai p-5 pada Tailwind */
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Sesuaikan dengan nilai w-full pada Tailwind */
+  background: linear-gradient(to top, #101012, transparent);
+  border-radius: 0 0 24px 24px; /* Sesuaikan dengan nilai rounded-b-[24px] pada Tailwind */
+  gap: 0.5rem; /* Sesuaikan dengan nilai gap-2 pada Tailwind */
 }
